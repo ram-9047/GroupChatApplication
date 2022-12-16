@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap");
+
+body {
+  font-family: "Comfortaa", cursive;
+  min-height: 100vh;
+  background: rgb(54, 133, 252);
+  background: linear-gradient(
+    40deg,
+    rgba(54, 133, 252, 1) 11%,
+    rgba(118, 54, 252, 1) 57%
+  );
+}
+
+.container {
+  margin-top: 6rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.login-card {
+  width: 32rem;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3.5rem;
+  border-radius: 5px;
+  position: relative;
+}
+.login-card::before {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  inset: 0;
+  transform: rotate(-8deg);
+  z-index: -1;
+  border-radius: 12px;
+}
+
+.login-card-logo {
+  margin-bottom: 2rem;
+}
+.login-card-logo span {
+  font-size: 4.5rem;
+}
+.login-card-logo,
+.login-card-title,
+.login-card-fotter {
+  text-align: center;
+}
+
+.login-card a {
+  text-decoration: none;
+  color: #35339a;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-card-title {
+  margin-bottom: 2rem;
+}
+.login-card-title h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.login-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-card-form .form-item {
+  position: relative;
+}
+
+.login-card-form .form-item .form-item-icon {
+  position: absolute;
+  top: 0.82rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.login-card-fotter {
+  margin-top: 2.8rem;
+  font-size: 1rem;
+}
+.login-card-fotter a:hover {
+  color: green;
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"],
+.login-card input[type="email"],
+.login-card input[type="text"] {
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1rem 1.5rem;
+  padding-left: calc(1rem * 3.5);
+  width: 100%;
+  border-radius: 15px;
+}
+
+.login-card input:focus {
+  background: white;
+}
+
+.login-card-form button,
+.reset-password-btn {
+  background: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 4rem;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.login-card-form button:hover,
+.reset-password-btn:hover {
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.reset-password-btn {
+  width: 25rem;
+  margin-top: 1.2rem;
+}
+.forgot-password a {
+  margin-left: 1.2rem;
+}
+.forgot-password a:hover {
+  color: rgb(240, 34, 34);
+}
