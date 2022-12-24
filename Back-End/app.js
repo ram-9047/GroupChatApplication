@@ -7,19 +7,24 @@ dotenv.config();
 const app = express();
 const sequelize = require("./util/database.js");
 
-
 //Routes Import
 const userRoutes = require("./routes/user.js");
 
 app.use(bodyPaser.json());
-app.use(cors());
+app.use(
+  cors({
+    // origin: "http://localhost:3000",
+    origin: "*",
+    // origin: "http://127.0.0.1:3000",
+  })
+);
 
 app.use(userRoutes);
 
 const port = 3000;
 sequelize
-  .sync({ force: true })
-  // .sync()
+  // .sync({ force: true })
+  .sync()
   .then(() => {
     console.log("DB CONNECTED");
     app.listen(port, () => {
