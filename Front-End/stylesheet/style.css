@@ -3,7 +3,7 @@
 body {
   font-family: "Comfortaa", cursive;
   min-height: 100vh;
-  background: rgb(54, 133, 252);
+  /* background: rgb(54, 133, 252); */
   background: linear-gradient(
     40deg,
     rgba(54, 133, 252, 1) 11%,
@@ -91,10 +91,10 @@ body {
   color: green;
 }
 
-.login-card input[type="text"],
 .login-card input[type="password"],
 .login-card input[type="email"],
-.login-card input[type="text"] {
+.login-card input[type="text"],
+.login-card input[type="number"] {
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.3);
