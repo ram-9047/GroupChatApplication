@@ -64,7 +64,7 @@ exports.signin = (req, res, next) => {
               .json({ user, token, success: true, message: "Logged In" });
           } else {
             res
-              .status(404)
+              .status(401)
               .json({ success: false, message: "Password in not correct" });
           }
         });

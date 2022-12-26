@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;300&display=swap");
+
+.home-container {
+  font-family: "Hanken Grotesk", sans-serif;
+  background-color: #35339a;
+  width: 40rem;
+  height: 100vh;
+  background: white;
+  border: 1.2rem solid rgb(226, 245, 220);
+  text-align: center;
+  position: relative;
+  margin-left: 25rem;
+}
+
+.home-chat-msg {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: end; */
+}
+
+.home-msg-form {
+  position: fixed;
+  bottom: 1.4rem;
+  margin-left: 2rem;
+}
+.home-msg-form input {
+  width: 30rem;
+}
