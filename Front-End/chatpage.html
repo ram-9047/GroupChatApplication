@@ -27,11 +27,19 @@
       <div class="home-chat-msg">
         <p>You :Hey</p>
         <p>Vaibhav :hi</p>
-        <form class="home-msg-form">
-          <input type="text" name="message" />
+        <form class="home-msg-form" id="chat-form">
+          <input
+            type="text"
+            name="message"
+            placeholder="Enter Message"
+            class="message"
+          />
           <button>Send</button>
         </form>
       </div>
     </main>
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
+  <script src="./js/chatpage.js"></script>
 </html>

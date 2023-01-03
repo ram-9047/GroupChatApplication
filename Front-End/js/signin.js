@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
         // console.log(token);
         localStorage.setItem("token", `${token}`);
         alert("loggin in ");
-        window.location.href = "./homepage.html";
+        window.location.href = "./chatpage.html";
       }
     } catch (error) {
       if (error.response.status == 401) {

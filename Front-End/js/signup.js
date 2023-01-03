@@ -23,19 +23,56 @@ form.addEventListener("submit", async function onSubmit(e) {
 
     console.log(res, "this is response from backend");
     if (res.status == 200) {
+      swal({
+        title: "Account Created",
+        text: "Click on Login",
+        icon: "success",
+        button: "Login",
+      });
       window.location.href = "./signin.html";
     } else if (res.status == 201) {
-      alert("Email already exist, try forget password");
+      swal({
+        title: "❌❌ Error ❌❌",
+        text: "Email already exist.",
+        icon: "error",
+      });
       window.location.href = "./signup.html";
     } else {
-      alert("incorect credentials");
+      swal({
+        title: "❌❌ Error ❌❌",
+        text: "Incorrect credentials.",
+        icon: "error",
+      });
       window.location.href = "./signup.html";
     }
   } else if (userName == "") {
-    alert("Name is not avail");
+    swal({
+      title: " ⚠️⚠️ Warning !!! ⚠️⚠️",
+      text: "Please enter your full name",
+      icon: "warning",
+    });
   } else if (email == "") {
-    alert("Email is not avail");
+    swal({
+      title: " ⚠️⚠️ Warning !!! ⚠️⚠️",
+      text: "Please enter your email-id",
+      icon: "warning",
+    });
   } else if (password == "") {
-    alert("Kindly Fill the password");
+    swal({
+      title: " ⚠️⚠️ Warning !!! ⚠️⚠️",
+      text: "Please enter the password",
+      icon: "warning",
+    });
   }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  // alert("hi");
+  // swal({ warning: "nope" });
+  // swal({
+  //   title: "Account Created",
+  //   text: "Click on Login",
+  //   icon: "success",
+  //   button: "Login",
+  // });
 });
