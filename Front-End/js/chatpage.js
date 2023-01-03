@@ -13,4 +13,30 @@ form.addEventListener("submit", async (e) => {
       headers: { Authorization: token },
     }
   );
+  chatMsg.value = "";
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+  try {
+    setInterval(() => {
+      displayOnLoad();
+    }, 1000);
+  } catch (error) {
+    console.log(error, "error in displaying data");
+  }
+});
+
+async function displayOnLoad() {
+  let respose = await axios.get("http://localhost:3000/message");
+  console.log(respose.data.message);
+  let allMessage = respose.data.message;
+  showChat(allMessage);
+}
+
+function showChat(allMessage) {
+  const chatBox = document.querySelector(".home-chat-msg-box");
+  chatBox.innerHTML = "";
+  allMessage.forEach((element) => {
+    chatBox.innerHTML += `<p>${element.message}<p> <br>`;
+  });
+}

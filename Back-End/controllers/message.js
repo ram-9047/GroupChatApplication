@@ -18,3 +18,12 @@ exports.saveTextToDB = async (req, res, next) => {
     res.status(500).json({ sucess: false, message: "error in saving msg" });
   }
 };
+
+exports.fetchMsg = async (req, res, next) => {
+  try {
+    const msg = await Message.findAll();
+    res.status(200).json({ sucess: true, message: msg });
+  } catch (error) {
+    res.status(500).json({ sucess: false, message: "error in fetching msg" });
+  }
+};
