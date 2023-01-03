@@ -4,6 +4,7 @@ const jsw = require("jsonwebtoken");
 const saltRound = 10;
 
 exports.signup = (req, res, next) => {
+  console.log(req.body, "inside signup route");
   let name = req.body.userName;
   let email = req.body.email;
   let password = req.body.password;
@@ -21,10 +22,12 @@ exports.signup = (req, res, next) => {
             password: result,
             phone: phoneNumber,
           });
+          console.log(x, "user created");
           res.status(200).json({ message: "User Created" });
         } catch (error) {
-          if (error.errors[0]["message"] == "email must be unique") {
-            res.status(201).json / { message: "Email Must be unique" };
+          // console.log(error.errors[0]["message"] === "email must be unique");
+          if (error.errors[0]["message"] === "email must be unique") {
+            res.status(201).json({ message: "Email Must be unique" });
           }
         }
       }
@@ -43,8 +46,6 @@ exports.signin = (req, res, next) => {
 
   User.findAll({ where: { email } })
     .then((user) => {
-      // console.log(user, "this is the user found in the database");
-
       if (user.length > 0) {
         bcrypt.compare(password, user[0]["password"], (err, result) => {
           if (err) {
@@ -74,6 +75,6 @@ exports.signin = (req, res, next) => {
     })
     .catch((error) => {
       // console.log(error, "error in login controller");
-      res.status(404).json({ message: "User not found" });
+      res.status(404).json({ error, message: "User not found" });
     });
 };

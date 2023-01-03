@@ -7,19 +7,24 @@ dotenv.config();
 const app = express();
 const sequelize = require("./util/database.js");
 
+//Models Import
+const User = require("./models/user.js");
+const Message = require("./models/message.js");
+
 //Routes Import
 const userRoutes = require("./routes/user.js");
+const messageRoutes = require("./routes/message.js");
 
 app.use(bodyPaser.json());
-app.use(
-  cors({
-    // origin: "http://localhost:3000",
-    origin: "*",
-    // origin: "http://127.0.0.1:3000",
-  })
-);
+
+app.use(cors());
+
+//Database Relationship
+User.hasMany(Message);
+Message.belongsTo(User);
 
 app.use(userRoutes);
+app.use(messageRoutes);
 
 const port = 3000;
 sequelize
