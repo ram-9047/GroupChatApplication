@@ -1,4 +1,5 @@
 const Message = require("../models/message.js");
+const { Op } = require("sequelize");
 
 exports.saveTextToDB = async (req, res, next) => {
   // console.log(req.body, "this is the incoming message");
@@ -21,7 +22,10 @@ exports.saveTextToDB = async (req, res, next) => {
 
 exports.fetchMsg = async (req, res, next) => {
   try {
-    const msg = await Message.findAll();
+    // console.log(req.query);
+    const lastId = +req.query.lastId;
+    // console.log(lastId);
+    const msg = await Message.findAll({ where: { id: { [Op.gt]: lastId } } });
     res.status(200).json({ sucess: true, message: msg });
   } catch (error) {
     res.status(500).json({ sucess: false, message: "error in fetching msg" });
