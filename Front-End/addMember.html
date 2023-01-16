@@ -20,45 +20,23 @@
       <h1>Chat App</h1>
     </header>
     <main class="home-chat-box">
-      <!-- Group Box -->
-      <div class="home-chat-box-groupBox">
-        <div>
-          <h5>Groups</h5>
-          <button class="add-group-btn">Create</button>
-        </div>
-        <div class="group-box-list"></div>
-      </div>
-      <!-- Chat box -->
-
-      <div class="home-chat-box-msg">
-        <div class="home-chat-msg">
-          <!-- chat  -->
-          <h4 id="activeGroup"></h4>
-          <div class="home-chat-msg-box"></div>
-          <!--  -->
-          <form class="home-msg-form" id="chat-form">
-            <input
-              type="text"
-              name="message"
-              placeholder="Enter Message"
-              class="message"
-            />
-            <button>Send</button>
-          </form>
-        </div>
-      </div>
-
       <!-- Member box-->
       <div class="member-box">
-        <h5>Members</h5>
+        <h5>Add New Member</h5>
         <div class="add-member">
-          <button class="add-member-btn">Add New Member</button>
+          <input
+            type="email"
+            name="member"
+            placeholder="Group Name"
+            class="member"
+          />
+          <button class="add-member-btn">Add</button>
         </div>
-        <div class="member-name"></div>
       </div>
+      <button class="back-btn">Back</button>
     </main>
   </body>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
-  <script src="./js/chatpage.js"></script>
+  <script src="./js/addMember.js"></script>
 </html>

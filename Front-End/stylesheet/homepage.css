@@ -3,26 +3,83 @@
 .home-container {
   font-family: "Hanken Grotesk", sans-serif;
   background-color: #35339a;
-  width: 40rem;
+  /* width: 40rem; */
   height: 100vh;
   background: white;
-  /* border: 1.2rem solid rgb(226, 245, 220); */
+  border: 1.2rem solid rgb(226, 245, 220);
   text-align: center;
   position: relative;
-  margin-left: 25rem;
+  /* margin-left: 25rem; */
+}
+
+.home-chat-box {
+  display: flex;
+  width: auto;
+}
+.home-chat-box-groupBox {
+  width: 25rem;
+  margin-top: 2rem;
+  height: 85vh;
+  overflow: scroll;
 }
 
 .home-chat-msg {
   display: flex;
-  flex-direction: column;
-  /* justify-content: end; */
+}
+.home-chat-msg-box {
+  margin-top: 3.2rem;
+  overflow: scroll;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  width: 50rem;
+  height: 78.5vh;
 }
 
 .home-msg-form {
   position: fixed;
   bottom: 1.4rem;
-  margin-left: 2rem;
+  margin-left: 8rem;
 }
 .home-msg-form input {
   width: 30rem;
+  padding: 1rem 0.4rem;
+}
+.home-msg-form button {
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+}
+
+.add-group-box {
+  outline: none;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+}
+
+.group-box {
+  border: 1px solid red;
+  padding: 1rem 0;
+}
+
+.group-box:hover {
+  background-color: gold;
+  color: green;
+}
+
+.member-name {
+  width: 20rem;
+  text-align: center;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.member-list {
+  padding: 0.5rem 0;
+}
+.member-list:hover {
+  background-color: aqua;
+}
+.edit-box button {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+  background-color: transparent;
+  border: 1px solid black;
 }
